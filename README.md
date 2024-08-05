@@ -27,7 +27,9 @@ Rode o seguinte comando:
 
 Rode o seguinte comando:
 
-	docker-compose build . && docker-compose up
+	docker build -t <image_name> .
+
+   docker run -it <image_name> /bin/bash
 
  ## 🐛 Como Rodar
 
