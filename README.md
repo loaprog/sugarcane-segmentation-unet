@@ -6,7 +6,11 @@ O objetivo final é criar um modelo de rede neural que possa segmentar imagens p
 ## 🤖 Arquitetura e Implementação do Modelo
 O projeto utiliza a arquitetura U-Net para segmentação de imagens, uma rede neural convolucional altamente eficaz para tarefas de segmentação. O modelo é composto por um encoder que extrai características de diferentes níveis de resolução da imagem e um decoder que reconstrói a imagem segmentada a partir dessas características. A arquitetura é projetada para combinar informações de diferentes camadas através de concatenamento, preservando detalhes importantes enquanto aumenta a resolução da imagem.
 
-![image](https://github.com/user-attachments/assets/1fbaaa6e-323a-4372-b1d3-843bd50a205c)
+<img src="https://github.com/user-attachments/assets/1fbaaa6e-323a-4372-b1d3-843bd50a205c" width="550"/>
+
+Também utiliza o Índice de Vegetação por Diferença de Verde (GLI) para melhorar a segmentação. O GLI é um índice de vegetação que ajuda a quantificar a presença de vegetação em imagens, o que é particularmente útil para distinguir baixar biomassa e alta biomassa. O índice é calculado a partir das bandas de cores da imagem e, em seguida, a imagem resultante é binarizada para criar um mapa de vegetação e solo. Esses dados binarizados são usados como parte do treinamento do modelo U-Net para melhorar a precisão da segmentação.
+
+<img src="https://github.com/user-attachments/assets/069bfb96-acb4-436b-abd0-a0188d0b0c01" alt="Descrição da Imagem" width="300"/>
 
  ## 💣💣💣 Antes de Rodar (*importante*)
  - Antes de executar o modelo, é essencial preparar os dados necessários. Primeiro, acesse o link do Google Drive para baixar a pasta contendo os dados base, que inclui ortomosaicos brutos e divididos em blocos, imagens segmentadas, modelos treinados e resultados de inferência.
