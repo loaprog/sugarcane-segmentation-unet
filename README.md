@@ -29,7 +29,7 @@ Rode o seguinte comando:
 
 	docker build -t <image_name> .
 
-   docker run -it <image_name> /bin/bash
+   	docker run -it <image_name> /bin/bash
 
  ## 🐛 Como Rodar
 
