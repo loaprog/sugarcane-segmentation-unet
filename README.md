@@ -11,7 +11,7 @@ O projeto utiliza a arquitetura U-Net para segmentação de imagens, uma rede ne
  ## 💣💣💣 Antes de Rodar (*importante*)
  - Antes de executar o modelo, é essencial preparar os dados necessários. Primeiro, acesse o link do Google Drive para baixar a pasta contendo os dados base, que inclui ortomosaicos brutos e divididos em blocos, imagens segmentadas, modelos treinados e resultados de inferência.
    
-https://drive.google.com/drive/folders/17FwkTvmJjDQRa81P9U2vxsScvTjFPC8C?usp=sharing
+https://drive.google.com/drive/folders/1xO1kjO2bOwpvkwe5uxx1z6Dfb-wSs9u7?usp=sharing
 
 ## 🚀 Configuração
 
@@ -37,19 +37,19 @@ O projeto é dividido em quatro/cinco etapas principais:
 
 1. **Quebra de Imagem em Blocos**: Divida a imagem ortomosaica em blocos usando o comando:
    ```bash
-   python src/preparacao_dados/divide_orthomosaic.py --input </path/to/orthomosaic.tif> --output </path/to/output/dir/>
+   python divide_orthomosaic.py --input </path/to/orthomosaic.tif> --output </path/to/output/dir/>
 2. **Geração de Dataset**: Segmente as imagens em blocos usando o índice de vegetação GLI com o comando:
    ```bash
-   python src/preparacao_dados/binarize_images.py --input </path/to/images/dir> --output </path/to/segmented/dir/>
+   python binarize_images.py --input </path/to/images/dir> --output </path/to/segmented/dir/>
 3. **Implementação e Treinamento da Rede Neural U-Net**: Treine o modelo com o comando:
    ```bash
-   python src/treinamento_modelo/train_model.py --rgb </path/to/images/dir> --groundtruth </path/to/segmented/dir/> --modelpath </path/to/model.h5>
+   python train_model.py (verifique x_train, y_train e output_model está certo) 
 4. **Inferência do Modelo**: Realize a inferência em uma imagem específica usando:
    ```bash
-   python src/inferencia/inference_model.py --rgb </path/to/image.png> --modelpath </path/to/model.h5> --output </path/to/segmented/image.png>
+   python inference_model.py --rgb </path/to/image.png> --modelpath </path/to/model.h5> --output </path/to/segmented/image.png>
 4. **Para processar todas as imagens em uma pasta**, utilize:
    ```bash
-   python src/inferencia/inference_folder.py --input </path/to/images/dir> --modelpath </path/to/model.h5> --output </path/to/segmented/dir/>
+   python inference_folder.py (verifique model_path, output_folder e dados_blocos está certo) 
    ```
 
 ## 👽 Estrutura e Organização do Projeto 
